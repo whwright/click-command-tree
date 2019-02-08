@@ -1,5 +1,7 @@
 import click
 
+__version__ = '1.0.0'
+
 
 @click.command(name='tree')
 @click.pass_context

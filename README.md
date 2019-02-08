@@ -4,8 +4,7 @@ click-command-tree
 **WARNING**: This has really only been tested with python3 and click 6 and 7. I plan to do better testing and integrate CI so find all
 possible versions this can be used with.
 
-`click-command-tree` is a [click](https://github.com/pallets/click) plugin that provides a command to show the command tree of
-your project.
+`click-command-tree` is a [click](https://github.com/pallets/click) plugin to show the command tree of your CLI
 
 example:
 
