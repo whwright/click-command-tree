@@ -1,0 +1,4 @@
+__pycache__/
+build/
+click_command_tree.egg-info/
+dist/
