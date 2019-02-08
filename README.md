@@ -6,7 +6,7 @@ your project.
 
 example:
 
-```
+```python
 from pkg_resources import iter_entry_points
 
 import click
