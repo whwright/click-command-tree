@@ -6,7 +6,13 @@ possible versions this can be used with.
 
 `click-command-tree` is a [click](https://github.com/pallets/click) plugin to show the command tree of your CLI
 
-example:
+Installation
+
+```
+pip install click-command-tree
+```
+
+Example:
 
 ```python
 from pkg_resources import iter_entry_points
