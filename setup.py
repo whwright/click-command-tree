@@ -18,10 +18,13 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3'
     ],
-    py_modules=['click_command_tree'],\
+    py_modules=['click_command_tree'],
     include_package_data=True,
     install_requires=[
         'click',
+    ],
+    setup_requires=[
+        'flake8==3.7.5',
     ],
     entry_points='''
         [click_command_tree]

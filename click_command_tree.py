@@ -24,7 +24,6 @@ class _CommandWrapper(object):
         return '{{_CommandWrapper {}}}'.format(self.name)
 
 
-
 def _build_command_tree(click_command):
     wrapper = _CommandWrapper(click_command)
 
