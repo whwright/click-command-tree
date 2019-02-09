@@ -6,6 +6,7 @@ __version__ = '1.0.0'
 @click.command(name='tree')
 @click.pass_context
 def tree(ctx):
+    """show the command tree of your CLI"""
     root_cmd = _build_command_tree(ctx.find_root().command)
     _print_tree(root_cmd)
 
