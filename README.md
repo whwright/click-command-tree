@@ -58,7 +58,8 @@ Options:
 Commands:
   command-group
   standard-command
-  tree
+  tree              show the command tree of your CLI
+
 
 ↪ python example.py tree
 root
