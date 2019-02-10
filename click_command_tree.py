@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import click
 
 __version__ = '1.0.2'
@@ -42,7 +43,7 @@ def _print_tree(command, depth=0, is_last_item=False, is_last_parent=False):
         prefix = '    ' if is_last_parent else '│   '
         tree_item = '└── ' if is_last_item else '├── '
 
-    click.echo((prefix * (depth - 1) + tree_item + command.name))
+    click.echo(prefix * (depth - 1) + tree_item + command.name)
 
     for i, child in enumerate(sorted(command.children, key=lambda x: x.name)):
         _print_tree(child,
