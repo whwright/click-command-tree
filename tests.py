@@ -149,6 +149,23 @@ root-command
 
         self._assert_correct_output(root, expected_output)
 
+    def test_command_with_docs(self):
+        @click.group(name='root')
+        def root():
+            pass
+
+        @root.command(name='thing')
+        def thing():
+            """do a thing"""
+            pass
+
+        expected_output = """
+root
+└── thing - do a thing
+"""[1:]
+        
+        self._assert_correct_output(root, expected_output)
+
     def _assert_correct_output(self, root, expected_output):
         with captured_output() as (out, err):
             tree = _build_command_tree(root)
