@@ -10,8 +10,9 @@ ACTIVATE=$(VIRTUALENV_BIN)/activate
 clean:
 	rm -rf $(BUILD_DIR) $(DIST_DIR)
 
-lint: $(ACTIVATE)
-	$(VIRTUALENV_BIN)/python setup.py flake8
+# TODO: linting this way is broken anyway
+# lint: $(ACTIVATE)
+# 	$(VIRTUALENV_BIN)/python setup.py flake8
 
 test: $(ACTIVATE)
 	$(VIRTUALENV_BIN)/python -m unittest discover -v

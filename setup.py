@@ -23,9 +23,6 @@ setup(
     install_requires=[
         'click',
     ],
-    setup_requires=[
-        'flake8==3.7.5',
-    ],
     entry_points='''
         [click_command_tree]
         tree=click_command_tree:tree
