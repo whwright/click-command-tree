@@ -30,7 +30,8 @@ def _build_command_tree(click_command):
 
     if isinstance(click_command, click.core.Group):
         for _, cmd in click_command.commands.items():
-            wrapper.children.append(_build_command_tree(cmd))
+            if not cmd.hidden: 
+                wrapper.children.append(_build_command_tree(cmd))
 
     return wrapper
 
