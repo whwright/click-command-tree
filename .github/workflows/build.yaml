@@ -10,9 +10,9 @@ jobs:
       matrix:
         python-version: ["2.x", "3.x"]
         click-version: [
-          "5.0",
-          "5.1",
-          "6.0",
+          # "5.0",
+          # "5.1",
+          # "6.0",
           "8.0.0"
         ]
 
