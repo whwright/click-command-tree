@@ -8,8 +8,13 @@ jobs:
     runs-on: ubuntu
     strategy:
       matrix:
-        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10", "3.11"]
-        click-version: ["8.0.0"]
+        python-version: ["2.x", "3.x"]
+        click-version: [
+          "5.0",
+          "5.1",
+          "6.0",
+          "8.0.0"
+        ]
 
     steps:
       - uses: actions/checkout@v3
