@@ -8,19 +8,26 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+
         # GOALS
         # 5.0 - 2.7, 3.x
         # 6.0 - 2.7, 3.x
         # 7.0 - 2.7, 3.4+
         # 8.0 - 3.6+
         # 8.1 - 3.7+
-        python-version: ["3.8"]
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
         click-version: [
           # "5.0",
           # "5.1",
           # "6.0",
-          "8.0.0"
+          "8.0.4",
+          "8.1.4",
         ]
+        exclude:
+          # click 8.1 drops support for py36
+          - python-version: "3.6"
+            click-version: "8.1.4"
+
 
     steps:
       - uses: actions/checkout@v3
