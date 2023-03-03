@@ -68,6 +68,5 @@ root
 ├── command-group
 │   └── nested-command
 ├── standard-command
-└── tree
-
+└── tree - show the command tree of your CLI
 ```
