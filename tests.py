@@ -166,6 +166,35 @@ root
         
         self._assert_correct_output(root, expected_output)
 
+    def test_hidden_command(self):
+        major_version = int(click.__version__.split('.')[0])
+        if major_version < 7:
+            return
+
+        @click.group(name='root')
+        def root():
+            pass
+
+        @root.command(name='command-one')
+        def command_one():
+            pass
+
+        @root.command(name='command-two', hidden=True)
+        def command_two():
+            pass
+
+        @root.command(name='command-three')
+        def command_three():
+            pass
+
+        expected_output = """
+root
+├── command-one
+└── command-three
+"""[1:]
+
+        self._assert_correct_output(root, expected_output)
+
     def _assert_correct_output(self, root, expected_output):
         with captured_output() as (out, err):
             tree = _build_command_tree(root)
