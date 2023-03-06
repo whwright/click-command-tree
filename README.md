@@ -3,6 +3,8 @@ click-command-tree
 
 `click-command-tree` is a [click](https://github.com/pallets/click) plugin to show the command tree of your CLI
 
+[![build and test](https://github.com/whwright/click-command-tree/actions/workflows/build.yaml/badge.svg)](https://github.com/whwright/click-command-tree/actions/workflows/build.yaml)
+
 Installation
 ------------
 
