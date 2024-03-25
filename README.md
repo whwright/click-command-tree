@@ -70,3 +70,12 @@ root
 ├── standard-command
 └── tree - show the command tree of your CLI
 ```
+
+
+Releasing:
+1. update `__version__` variable, and in `setup.py`
+1. git commit new version
+1. git tag -a {version}
+1. git push origin master --tags
+1. make publish-dist
+1. go to github UI and turn tag into a release

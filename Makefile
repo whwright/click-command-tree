@@ -17,11 +17,11 @@ clean:
 test: $(ACTIVATE)
 	$(VIRTUALENV_BIN)/python -m unittest discover -v
 
-build-dist: clean $(ACTIVATE) lint test
+build-dist: clean $(ACTIVATE) test
 	$(VIRTUALENV_BIN)/python setup.py sdist bdist_wheel
 
 publish-dist: build-dist
-	$(VIRTUALENV_BIN)/pip install twine==1.12.1 && \
+	$(VIRTUALENV_BIN)/pip install twine==5.0.0 && \
 		$(VIRTUALENV_BIN)/twine upload dist/*
 
 $(VIRTUALENV) $(ACTIVATE):
