@@ -10,7 +10,7 @@ Installation
 pip install click-command-tree
 ```
 
-This is tested against Python versions 3.7 - 3.11 and (latest major release) click versions
+This is tested against Python versions 3.8 - 3.12 and (latest major release) click versions
 5.x, 6.x, 7.x, 7.1.x, 8.0.x, and 8.1.x.
 
 
