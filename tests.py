@@ -195,6 +195,26 @@ root
 
         self._assert_correct_output(root, expected_output)
 
+    def test_long_docstring(self):
+        @click.group(name='root')
+        def root():
+            pass
+
+        @root.command(name='command')
+        def command():
+            """
+            this is a really long multi line doc string this is a really long multi line doc string
+            this is a really long multi line doc string this is a really long multi line doc string
+            """
+            pass
+
+        expected_output = """
+root
+└── command - this is a really long multi line doc string this is a really long multi line doc ...
+"""[1:]
+
+        self._assert_correct_output(root, expected_output)
+
     def _assert_correct_output(self, root, expected_output):
         with captured_output() as (out, err):
             tree = _build_command_tree(root)

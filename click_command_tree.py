@@ -45,7 +45,7 @@ def _print_tree(command, depth=0, is_last_item=False, is_last_parent=False):
         tree_item = '└── ' if is_last_item else '├── '
 
     line = prefix * (depth - 1) + tree_item + command.name
-    doc = command.command.__doc__
+    doc = _get_truncated_docstring(command.command)
     if doc:
         line += ' - {}'.format(doc)
 
@@ -56,3 +56,21 @@ def _print_tree(command, depth=0, is_last_item=False, is_last_parent=False):
                     depth=(depth + 1),
                     is_last_item=(i == (len(command.children) - 1)),
                     is_last_parent=is_last_item)
+
+
+def _get_truncated_docstring(command):
+    if not command.__doc__:
+        return None
+
+    doc = command.__doc__
+    lines = doc.split("\n")
+    if not lines:
+        return None
+
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+
+        return line[:80] + ' ...' if len(line) > 80 else line
+
