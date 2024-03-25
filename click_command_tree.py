@@ -59,10 +59,11 @@ def _print_tree(command, depth=0, is_last_item=False, is_last_parent=False):
 
 
 def _get_truncated_docstring(command):
-    if not command.__doc__:
+    doc = command.__doc__
+
+    if not doc:
         return None
 
-    doc = command.__doc__
     lines = doc.split("\n")
     if not lines:
         return None
@@ -74,3 +75,4 @@ def _get_truncated_docstring(command):
 
         return line[:80] + ' ...' if len(line) > 80 else line
 
+    return None
