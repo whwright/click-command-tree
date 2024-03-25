@@ -6,7 +6,7 @@ README = (HERE / 'README.md').read_text()
 
 setup(
     name='click-command-tree',
-    version='1.1.1',
+    version='1.2.0',
     description='click plugin to show the command tree of your CLI',
     long_description=README,
     long_description_content_type='text/markdown',
