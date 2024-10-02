@@ -18,13 +18,13 @@ Example
 -------
 
 ```python
-from pkg_resources import iter_entry_points
+import importlib.metadata
 
 import click
 from click_plugins import with_plugins
 
 
-@with_plugins(iter_entry_points('click_command_tree'))
+@with_plugins(importlib.metadata.entry_points(group="click_command_tree"))
 @click.group()
 def root():
     pass
